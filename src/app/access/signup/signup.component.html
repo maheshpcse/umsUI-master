@@ -1,0 +1,116 @@
+<!-- <app-header></app-header> -->
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-6 offset-md-3">
+            <h1 mat-dialog-title class="add-title">User Signup</h1>
+            <div class="container mat-dialog-content-signup">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form [formGroup]="signupForm" novalidate fxLayout="column wrap" fxLayoutAlign="center center"
+                            fxLayoutGap="10px">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Fullname</mat-label>
+                                        <input matInput type="text" name="fullname" formControlName="fullname"
+                                            placeholder="Fullname" required>
+                                        <mat-icon matSuffix>person</mat-icon>
+                                        <mat-error *ngIf="myError('fullname', 'required')">
+                                            Fullname is required
+                                        </mat-error>
+                                        <mat-error *ngIf="myError('fullname', 'maxlength')">
+                                            Maximum length exceed
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-12">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Username</mat-label>
+                                        <input matInput type="text" name="username" formControlName="username"
+                                            placeholder="Username" required>
+                                        <mat-icon matSuffix>account_circle</mat-icon>
+                                        <mat-error *ngIf="myError('username', 'required')">
+                                            Username is required
+                                        </mat-error>
+                                        <mat-error *ngIf="myError('username', 'maxlength')">
+                                            Maximum length exceed
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-12">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Email address</mat-label>
+                                        <input matInput type="email" name="email" formControlName="email"
+                                            placeholder="Fullname" required>
+                                        <mat-icon matSuffix>email</mat-icon>
+                                        <mat-error *ngIf="myError('email', 'required')">
+                                            Email address is required
+                                        </mat-error>
+                                        <mat-error *ngIf="myError('email', 'maxlength')">
+                                            Maximum length exceed
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-12 mt-2">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Password</mat-label>
+                                        <input matInput type="password" name="password" formControlName="password"
+                                            placeholder="Password" required>
+                                        <mat-icon matSuffix>lock</mat-icon>
+                                        <mat-error *ngIf="myError('password', 'required')">
+                                            Password is required
+                                        </mat-error>
+                                        <mat-error *ngIf="myError('password', 'maxlength')">
+                                            Maximum length exceed
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-12">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Address</mat-label>
+                                        <input matInput type="text" name="address" formControlName="address"
+                                            placeholder="Address" required>
+                                        <mat-icon matSuffix>home</mat-icon>
+                                        <mat-error *ngIf="myError('address', 'required')">
+                                            Address is required
+                                        </mat-error>
+                                        <mat-error *ngIf="myError('address', 'maxlength')">
+                                            Maximum length exceed
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-12">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Phone number</mat-label>
+                                        <input matInput type="number" name="mobile" formControlName="mobile"
+                                            placeholder="Phone number" required>
+                                        <mat-icon matSuffix>smartphone</mat-icon>
+                                        <mat-error *ngIf="myError('mobile', 'required')">
+                                            Phone number is required
+                                        </mat-error>
+                                        <!-- <mat-error *ngIf="myError('mobile', 'maxlength')">
+                                            Maximum length exceed
+                                        </mat-error> -->
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="pb-3 pt-3 d-flex align-items-baseline mat-dialog-actions-signup">
+                            <button mat-raised-button color="primary" (click)="userSignup(signupForm)"
+                                [disabled]="setFormValidation(signupForm)">
+                                Signup
+                            </button>
+                            <span class="login-btn">
+                                <span>Already an user ?</span>
+                                <span class="ml-2"><a [routerLink]="['/login']">Login</a></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
